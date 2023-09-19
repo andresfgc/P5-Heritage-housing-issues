@@ -22,7 +22,7 @@ You can safely delete the Codeanywhere Template Instructions section of this REA
 
 1. Wait for the workspace to open. This can take a few minutes.
 
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
+1. Open a new terminal and pip3 install -r require<code>ments.txt</code>
 
 1. In the terminal type <code>pip3 install jupyter</code>
 
