@@ -12,21 +12,21 @@ def page_ml_predict_price_body():
     # load pipeline files
     version = 'v1'
     best_regressor_pipeline = load_pkl_file(
-        "outputs/ml_pipeline/predict_churn/" +
+        "outputs/ml_pipeline/predict_price/" +
         f"{version}/pipeline_clf.pkl"
     )
     sale_price_importance = plt.imread(
-        "outputs/ml_pipeline/predict_churn/" +
+        "outputs/ml_pipeline/predict_price/" +
         f"{version}/features_importance.png"
     )
     X_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/X_train.csv")
+        f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
     X_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/X_test.csv")
+        f"outputs/ml_pipeline/predict_price/{version}/X_test.csv")
     y_train = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/y_train.csv")
+        f"outputs/ml_pipeline/predict_price/{version}/y_train.csv")
     y_test = pd.read_csv(
-        f"outputs/ml_pipeline/predict_churn/{version}/y_test.csv")
+        f"outputs/ml_pipeline/predict_price/{version}/y_test.csv")
 
     st.write("### ML: Predict Sale Price")
     # display pipeline training summary conclusions

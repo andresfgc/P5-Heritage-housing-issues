@@ -12,7 +12,7 @@ def page_predict_price_body():
 
     # Load the necessary files to predict house prices
     version = 'v1'
-    output_dir = "outputs/ml_pipeline/predict_churn"
+    output_dir = "outputs/ml_pipeline/predict_price"
     pipeline_path = f"{output_dir}/{version}/pipeline_clf.pkl"
     X_train_path = f"{output_dir}/{version}/X_train.csv"
 
@@ -104,8 +104,8 @@ def DrawInputsWidgets():
         feature = "TotalBsmtSF"
         st_widget = st.number_input(
             label=feature,
-            min_value=0,
-            max_value=10,
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
             value=int(df[feature].median()),
             help="Total square feet of basement area"
         )
@@ -122,7 +122,7 @@ def DrawInputsWidgets():
         )
         X_live[feature] = st_widget
 
-    with col3:
+    with col4:
         feature = "LotArea"
         st_widget = st.number_input(
             label=feature,
