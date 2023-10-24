@@ -90,28 +90,6 @@ def DrawInputsWidgets():
     # draw the widget based on the variable type and set initial values
 
     with col1:
-        feature = "YearBuilt"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min()*percentageMin),
-            max_value=int(df[feature].max()*percentageMax),
-            value=int(df[feature].median()),
-            help="Original construction date"
-        )
-        X_live[feature] = st_widget
-
-    with col2:
-        feature = "TotalBsmtSF"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min()*percentageMin),
-            max_value=int(df[feature].max()*percentageMax),
-            value=int(df[feature].median()),
-            help="Total square feet of basement area"
-        )
-        X_live[feature] = st_widget
-
-    with col3:
         feature = "2ndFlrSF"
         st_widget = st.number_input(
             label=feature,
@@ -122,7 +100,7 @@ def DrawInputsWidgets():
         )
         X_live[feature] = st_widget
 
-    with col4:
+    with col2:
         feature = "LotArea"
         st_widget = st.number_input(
             label=feature,
@@ -130,6 +108,28 @@ def DrawInputsWidgets():
             max_value=int(df[feature].max()*percentageMax),
             value=int(df[feature].median()),
             help="Lot size in square feet"
+        )
+        X_live[feature] = st_widget
+
+    with col3:
+        feature = "TotalBsmtSF"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median()),
+            help="Total square feet of basement area"
+        )
+        X_live[feature] = st_widget
+
+    with col4:
+        feature = "YearBuilt"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median()),
+            help="Original construction date"
         )
         X_live[feature] = st_widget
 
