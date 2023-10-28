@@ -5,18 +5,17 @@ import joblib
 
 
 # Adapted  from Code Institute's Churnometer walkthrough Project
-# @st.cache(suppress_st_warning=True, allow_output_mutation=True)
-@st.cache_data
+@st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_house_prices_data():
     df = pd.read_csv("outputs/datasets/collection/house_price_records.csv")
     return df
 
 
-# @st.cache(suppress_st_warning=True, allow_output_mutation=True)
-@st.cache_data
+@st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_inherited_houses_data():
-    df = pd.read_csv("outputs/datasets/collection/inherited_houses.csv")
-    return df
+    df_inherited = pd.read_csv(
+        "outputs/datasets/collection/inherited_houses.csv")
+    return df_inherited
 
 
 def load_pkl_file(file_path):

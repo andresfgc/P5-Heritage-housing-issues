@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from src.data_management import load_house_prices_data
+from src.data_management import load_house_prices_data  # pylint: disable=E401
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -24,14 +24,14 @@ def page_correlation_study_body():
                      'YearBuilt',
                      'YearRemodAdd']
 
-    st.write("### House Sale Prices Study")
+    st.write("### House Sales Price Study")
 
     st.info(
         f"#### Business Requirement 1\n"
         f"The client is interested in discovering how house attributes "
-        f"correlate with sale prices. Therefore, the client "
+        f"correlate with sales prices. Therefore, the client "
         f"expects data visualizations of the correlated variables against "
-        f"the sale price.\n\n"
+        f"the sales price.\n\n"
     )
 
     # inspect data
@@ -51,18 +51,18 @@ def page_correlation_study_body():
         f"The most correlated variables are: **{vars_to_study}**"
     )
 
-    # Text based on "Sale Price Correlation Study" notebook - "Conclusions" section
+    # Text based on "Sale Price Correlation Study" notebook
     st.info(
         f" Based on the analysis of the correlation coefficients and "
         f"examination of the corresponding plots, it is indicated that:\n\n "
         f"* **1stFlrSF**, **GarageArea**, **GarageYrBlt**, **TotalBsmtSF** "
-        f"are showing a moderate correlation with the sale price.\n"
+        f"are showing a moderate correlation with the sales price.\n"
         f"* **OverallQual**, **GrLivArea** are showing a high correlation "
-        f"with the sale price.\n"
-        f"* **KitchenQual** is showing a consiredable higher sale price for "
+        f"with the sales price.\n"
+        f"* **KitchenQual** is showing a consiredable higher sales price for "
         f"properties with kitchens in excellent condition.\n"
         f"* **MasVnrArea** is showing a low-moderate correlation with "
-        f"the sale price.\n"
+        f"the sales price.\n"
         f"* From 1980 onwards, an acceleration in price increases can "
         f"be observed in **YearBuilt** and **YearRemodAdd**.\n\n"
         f"**Correlation-Interpretation:**\n\n"
@@ -78,7 +78,7 @@ def page_correlation_study_body():
         f"'SalePrice':"
     )
 
-    # Copied from "Sale Price Correlation Study" notebook - "EDA on selected variables"
+    # Copied from "Sale Price Correlation Study" notebook
     df_eda = df.filter(vars_to_study + ['SalePrice'])
 
     # Individual plots per variable

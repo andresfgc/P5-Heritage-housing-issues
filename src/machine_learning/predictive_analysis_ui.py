@@ -3,9 +3,9 @@ import streamlit as st
 # The following function is adapted from Code Institute - Churnometer Project.
 
 
-def predict_sale_price(X_live, best_features, pipeline):
+def predict_sale_price(X_live, vars_to_study, pipeline):
     # from live data, subset features related to this pipeline
-    X_live_sale_price = X_live.filter(best_features)
+    X_live_sale_price = X_live.filter(vars_to_study)
 
     # predict
     sale_price_prediction = pipeline.predict(X_live_sale_price)

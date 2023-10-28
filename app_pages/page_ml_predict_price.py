@@ -10,7 +10,7 @@ from src.machine_learning.evaluate_regression import (
 def page_ml_predict_price_body():
 
     # load pipeline files
-    version = 'v1'
+    version = 'v2'
     best_regressor_pipeline = load_pkl_file(
         "outputs/ml_pipeline/predict_price/" +
         f"{version}/pipeline_clf.pkl"

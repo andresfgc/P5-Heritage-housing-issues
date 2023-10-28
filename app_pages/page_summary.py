@@ -11,10 +11,10 @@ def page_summary_body():
         f"The app offers users the following functionalities:\n"
         f"* **Correlation Analysis:** The application "
         f"allows users to identify "
-        f"the correlation between house attributes and the sale price.\n"
-        f"* **Sale Price Prediction:** The application provides a predictive "
+        f"the correlation between house attributes and the sales price.\n"
+        f"* **Sales Price Prediction:** The application provides a predictive "
         f"model that enables users to obtain accurate estimates for "
-        f"the sale price.\n"
+        f"the sales price.\n"
     )
 
     # text based on README file - "Dataset Content" section
@@ -48,9 +48,9 @@ def page_summary_body():
     st.success(
         f"The project has 2 business requirements:\n\n "
         f"1 - The client is interested in discovering how house attributes "
-        f"correlate with sale prices. Therefore, the client "
+        f"correlate with sales prices. Therefore, the client "
         f"expects data visualizations of the correlated variables against "
-        f"the sale price.\n\n"
-        f"2 - The client is interested in predicting the house sale prices "
+        f"the sales price.\n\n"
+        f"2 - The client is interested in predicting the house sales prices "
         f"from her 4 inherited houses, and any other house in Ames, Iowa."
     )
