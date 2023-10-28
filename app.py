@@ -8,7 +8,8 @@ from app_pages.page_predict_price import page_predict_price_body
 from app_pages.page_project_hypothesis import page_project_hypothesis_body
 from app_pages.page_ml_predict_price import page_ml_predict_price_body
 
-app = MultiPage(app_name="Heritage Housing")  # Create an instance of the app
+# Create an instance of the app
+app = MultiPage(app_name="Heritage Housing Sale Price")
 
 # Add app pages using .add_page()
 app.add_page("Quick Project Summary", page_summary_body)
