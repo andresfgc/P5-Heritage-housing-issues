@@ -78,7 +78,8 @@ def DrawInputsWidgets():
     percentageMin, percentageMax = 0.4, 2.0
 
     # Create input widgets for best features
-    col1, col2, col3, col4, col5 = st.beta_columns(5)
+    col1, col2, col3, = st.beta_columns(3)
+    col4, col5 = st.beta_columns(2)
 
     # create an empty DataFrame, which will be the live data
     X_live = pd.DataFrame([], index=[0])

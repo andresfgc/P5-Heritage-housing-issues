@@ -5,6 +5,8 @@ import pandas as pd
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import numpy as np
 
+# Functions taken and modified from Scikit-Learn Unit 4
+
 
 def regression_performance(X_train, y_train, X_test, y_test, pipeline):
     st.write("Model Evaluation \n")
