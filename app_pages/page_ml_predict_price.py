@@ -11,7 +11,7 @@ from src.machine_learning.evaluate_regression import (
 def page_ml_predict_price_body():
 
     # load pipeline files
-    version = 'v2'
+    version = 'v3'
     best_regressor_pipeline = load_pkl_file(
         "outputs/ml_pipeline/predict_price/" +
         f"{version}/pipeline_clf.pkl"
@@ -37,10 +37,10 @@ def page_ml_predict_price_body():
         f"when predicting the price of a property.\n"
         f"**ExtraTreesRegressor** demonstrated consistent performance."
         f" It achieved an **R2 score** of **1.0** on the train set and "
-        f"**0.796** on the test set. \n"
+        f"**0.803** on the test set. \n"
         f"* Considering this results, the objective was to improve "
         f"the pipeline by using only the best variables for "
-        f"its optimal development.."
+        f"its optimal development."
     )
     st.write("---")
 
@@ -64,20 +64,17 @@ def page_ml_predict_price_body():
 
     # Plot predicted versus actual sale price for train and test sets
     st.write("**Regression Evaluation plots:**")
-    st.write(
-        f"* comparison between prediction and actual values "
-        f"of the train & test set:\n\n"
+    st.info(
+        f"* Comparison between prediction and actual values "
+        f"of the train & test set:\n"
+        f"* The red line is the corresponding the expected value to "
+        f"predict while the blue value is the actual value.\n"
+        f"* The closer the blue point is to the red line, the higher the "
+        f"effectiveness of the model and the further away from the red line, "
+        f"the lower the effectiveness of the model.\n\n"
         f"(It may take some time while charging)"
     )
     regression_evaluation_plots(X_train=X_train, y_train=y_train,
                                 X_test=X_test, y_test=y_test,
                                 pipeline=best_regressor_pipeline,
                                 alpha_scatter=0.5)
-
-    st.write(
-        f"* The red line is the corresponding the expected value to "
-        f"predict while the blue value is the actual value.\n"
-        f"* The closer the blue point is to the red line, the higher the "
-        f"effectiveness of the model and the further away from the red line, "
-        f"the lower the effectiveness of the model.."
-    )
