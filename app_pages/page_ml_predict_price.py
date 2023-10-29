@@ -29,7 +29,7 @@ def page_ml_predict_price_body():
     y_test = pd.read_csv(
         f"outputs/ml_pipeline/predict_price/{version}/y_test.csv")
 
-    st.write("### ML: Predict Sale Price")
+    st.write("### ML: Predict Sales Price")
     # display pipeline training summary conclusions
     st.info(
         f"* this ML pipeline was designed to at least achieve a R2 Score "

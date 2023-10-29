@@ -8,7 +8,7 @@ def page_project_hypothesis_body():
     # conclusions taken from "03 - Correlation_Study" notebook
     st.success(
         f"**Hypothesis 1**: Size has a significant influence in sales price.\n"
-        f"* the analysis of variables related to square metres suggests "
+        f"* The analysis of variables related to square metres suggests "
         f"that size is a relevant factor for the proper "
         f"valuation of the property.\n\n"
 
