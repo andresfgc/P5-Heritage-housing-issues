@@ -17,6 +17,6 @@ app.add_page("Sales Price Correlation Study",
              page_correlation_study_body)
 app.add_page("House Sales Price Predictor", page_predict_price_body)
 app.add_page("Project Hypothesis", page_project_hypothesis_body)
-app.add_page("ML: Predict Sale Price", page_ml_predict_price_body)
+app.add_page("ML: Predict Sales Price", page_ml_predict_price_body)
 
 app.run()  # Run the app

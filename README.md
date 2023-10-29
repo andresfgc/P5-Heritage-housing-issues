@@ -1,5 +1,3 @@
-<!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png) -->
-
 ## Heritage Housing Issues
 
 This is a machine learning project focused on housing price prediction in Ames, Iowa.
@@ -8,16 +6,28 @@ This is a machine learning project focused on housing price prediction in Ames, 
 
 ## Table of Contents
 
-[Dataset Content](#dataset-content)
-[Tearms and Jargons](#terms-and-jargons)
-[Business Requirements](#business-requirements)
-[Hypothesis and how to validate](#hypothesis-and-how-to-validate)
-[Rationale to map the business requirements to the data visualizations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
-[ML Business Case](#ml-business-case)
-[Dashboard Design](#dashboard-design)
-[Unfixed Bugs](#unfixed-bugs)
-[Deployment](#deployment)
-[Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+- [Heritage Housing Issues](#heritage-housing-issues)
+- [Table of Contents](#table-of-contents)
+- [Dataset Content](#dataset-content)
+- [Terms and Jargons](#terms-and-jargons)
+- [Business Requirements](#business-requirements)
+  - [Epics \& User Stories](#epics--user-stories)
+- [Hypothesis and how to validate?](#hypothesis-and-how-to-validate)
+- [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+- [ML Business Case](#ml-business-case)
+- [Dashboard Design](#dashboard-design)
+  - [Page 1: Quick project summary](#page-1-quick-project-summary)
+  - [Page 2: Sales price correlation Study](#page-2-sales-price-correlation-study)
+  - [Page 3: House sales price predictor](#page-3-house-sales-price-predictor)
+  - [Page 4: Project hypothesis](#page-4-project-hypothesis)
+  - [Page 5: ML: Predict sales price](#page-5-ml-predict-sales-price)
+- [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+  - [Heroku](#heroku)
+- [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+- [Credits](#credits)
+  - [Content](#content)
+- [Acknowledgements](#acknowledgements)
 
 ## Dataset Content
 
@@ -109,40 +119,91 @@ Epics and user stories were created for the correct management of customer requi
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+* **Predict Sales price**
+  * We want a ML model to predict the sales price for the inherited houses from our client.
+  * We also want a ML model to predict the sales prices for houses in Ames, Iowa.
+  * The model achieves the agreed R2 score of at least 0.75 on the train as well as on the test set.
+  * The Dashboard will provide the client the relevant information to understand the correlation between variables and sales price and analyse future house in Ames, Iowa
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Quick project summary
+
+* Quick project summary
+  * Project Terms & Jargon
+  * Describe Project Dataset
+  * State Business Requirements
+
+### Page 2: Sales price correlation Study
+
+* This pages was created to answer business requirement 1.
+* It contains a data visualization of the correlated variables against the sales price.
+* With the button function "Inspect House Price Dataset" it lets the client to have a look at the row dataset.
+* It also shows insights related to the top 10 correlated variables.
+* For better analysis the client has two oder buttons where she can see the correlations represented in scatter plots and a heatmap.
+
+### Page 3: House sales price predictor
+
+* This pages was created to answer business requirement 2.
+* It shows the attributes for the 4 houses and their respective predicted sales prices.
+* It also displays a message showing the sum of all predicted sales prices of the four inherited houses.
+* The button "Predict Sales Price" let the user send the given information to the ML pipeline in order to get a new prediction.
+
+### Page 4: Project hypothesis
+
+* During the correlation study it was possible to investigate the following hypothesis:
+  * Hypothesis 1: Size has a significant influence in sales price.
+    * The analysis of variables related to square metres suggests that size is a relevant factor for the proper valuation of the property.
+  * Hypothesis 2: Newer properties have higher prices.
+    * The historical analysis between sales price and date of construction gives an indication that new homes tend to have higher prices than older ones.
+  * Hypothesis 3: The quality of the kitchen affects property value.
+    * We observed a high correlation between kitchen quality and sales price. It may suggest that homes with excellent kitchen quality ratings may command a higher price.
+
+### Page 5: ML: Predict sales price
+
+* Considerations and conclusions after the pipeline is trained
+* Present ML pipeline steps
+* Feature importance
+* Pipeline performance
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+
 
 ## Deployment
 
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: [heritage-housing-issues-afgc](https://heritage-housing-issues-afgc-4e55c09890ec.herokuapp.com/)
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+2. At the Deploy tab, select GitHub as the deployment method
+3. Select your repository name and click Search. Once it is found, click Connect
+4. To deploy from GitHub it was necessary to use install the Heroku CLI
+5. Login in the terminal with $ heroku login -i. E-mail and API Token were needed
+6. Since the repository already exits in heroku it is necessary to get it first $ git:remote -a heritage-housing-issues-afgc
+7. $ heroku stack:set heroku-20 was used to change the heroku version from 22 to 20
+8. finally it could be deployed by the GitHub connection inside Heroku
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+- Numpy - Used to generate arrays for the correlation to generate heatmaps.
+- Pandas - Used to convert CSV data into data frames to support data manipulation and analysis.
+- pandas_profiling - Used to  generate reports on the input DataFrame such as statistical values and variable types.
+- seaborn - Used to generate charts for the correlation histograms, heatmap and feature importance.
+- matplotlib - Used to generate plots to visualize data and present findings.
+- Feature-engine - Use to apply data engineering techniques for categorical and numerical transformations.
+- Scikit-Learn - Used to train and evaluate ML model performance.
+- Streamlit - Used to create the dashboard.
+- Jupyter: Used to create the notebooks for DataCollection, DataCleaning, FeatureEngineering, Correlation Study and Modeling and Evaluation.
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+* Code Institute for the repository template and [Churnometer project](https://github.com/Code-Institute-Solutions/churnometer).
+* Dataset obtained from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
+* Code Institute Chapter [Data Analysis & Machine Laarning Toolkit](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/d186ae95191f48e9a2151559c7e6f85d/771e4d181ce0413c87572c1baa903190/)
 
 ### Content
 
@@ -150,11 +211,6 @@ Epics and user stories were created for the correct management of customer requi
 - Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
-### Media
-
-- The photos used on the home and sign-up page are from This Open Source site
-- The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
-
+## Acknowledgements
+- I want to thank [Amare](https://github.com/Amareteklay/heritage-housing-issues) and [Iman](https://github.com/Imangnp/heritage-housing-issues) for allowing me to learn about their work. Thanks to them I was able to improve my project.
+* I would specially like to thank my mentor Mo Shami, for his good advice and guidance.
