@@ -130,9 +130,9 @@ Epics and user stories were created for the correct management of customer requi
 ### Page 1: Quick project summary
 
 - Quick project summary
-  - Project Terms & Jargon
-  - Describe Project Dataset
-  - State Business Requirements
+- Project Terms & Jargon
+- Describe Project Dataset
+- State Business Requirements
 ![Quick Project Summary](/media/quick-project-summry.JPG)
 
 ### Page 2: Sales price correlation Study
@@ -158,13 +158,13 @@ Epics and user stories were created for the correct management of customer requi
 ### Page 4: Project hypothesis
 
 - During the correlation study it was possible to investigate the following hypothesis:
-  - Hypothesis 1: Size has a significant influence in sales price.
-    - The analysis of variables related to square metres suggests that size is a relevant factor for the proper valuation of the property.
-  - Hypothesis 2: Newer properties have higher prices.
-    - The historical analysis between sales price and date of construction gives an indication that new homes tend to have higher prices than older ones.
-  - Hypothesis 3: The quality of the kitchen affects property value.
-    - We observed a high correlation between kitchen quality and sales price. It may suggest that homes with excellent kitchen quality ratings may command a higher price.
-![Project Hypothesis](/media/project-hypothesis.JPG)
+- Hypothesis 1: Size has a significant influence in sales price.
+  - The analysis of variables related to square metres suggests that size is a relevant factor for the proper valuation of the property.
+- Hypothesis 2: Newer properties have higher prices.
+  - The historical analysis between sales price and date of construction gives an indication that new homes tend to have higher prices than older ones.
+- Hypothesis 3: The quality of the kitchen affects property value.
+  - We observed a high correlation between kitchen quality and sales price. It may suggest that homes with excellent kitchen quality ratings may command a higher price.
+- ![Project Hypothesis](/media/project-hypothesis.JPG)
 
 ### Page 5: ML: Predict sales price
 
@@ -180,16 +180,16 @@ Epics and user stories were created for the correct management of customer requi
 ## Fixed Bugs
 
 - Line too long (95 > 79 characters) pycodestyle(E501)
-  - ![Line too Long](/media/fix_bug_1.JPG)
+![Line too Long](/media/fix_bug_1.JPG)
   - Solution
-  - ![Line too long solution](/media/fix_bug_solution_1.JPG)
+![Line too long solution](/media/fix_bug_solution_1.JPG)
 
 ## Unfixed Bugs
 
 - Pylint(import-error): It says that the page is unable to import:
   - src.data_management
   - src.machine_learning.evaluate_regression
-  - It is only a visual error from pylint, the page is actually able to import data from src
+- It is only a visual error from pylint, the page is actually able to import data from src
 ![pylint(import-error)](/media/ml-predict-sales-price-1.JPG)
 
 - Warnings: pandas.In64Index and Passing a set as an index are deprecated.
